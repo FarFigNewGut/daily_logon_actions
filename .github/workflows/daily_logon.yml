@@ -1,0 +1,28 @@
+name: Run daily logons
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+  push: []
+
+jobs:
+  logons:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout configuration
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Setup ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.5'
+
+      - name: Install sqlite3 gem
+        run: gem install sqlite3
+
+      - name: Run logon script
+        run: ruby daily_logon_runner.rb
+        env:
+          CHARACTER_CONNECTION_STRINGS: ${{ secrets.CHARACTER_CONNECTION_STRINGS }}
+
