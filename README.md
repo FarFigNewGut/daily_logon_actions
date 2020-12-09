@@ -7,6 +7,8 @@ seperate each character on a different line
 
 i.e.
 
+```
 dudeone,accountone,sekretword
 dudetwo,accounttwo,wordofsekret
 dudethree,accountone,sekretotherword
+```
