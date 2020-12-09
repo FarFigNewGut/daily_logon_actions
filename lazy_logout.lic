@@ -1,2 +1,13 @@
-sleep 15
+res = dothistimeout "wait", 62, /Thank you for logging into GemStone IV/
+res = reget "Thank you for logging into GemStone IV" if res !~ /Thank you for logging into GemStone IV/
+if res =~ /Thank you for logging into GemStone IV/
+	puts "#{Char.name} WENT STREAKING!"
+else
+	booster = dothistimeout "boost info", 10, /Current Login Streak/
+	if booster =~ /Current Login Streak:.* ([0-9]+) day/
+		puts "#{Char.name} can't confirm new streak but current is #{$1.to_i} day(s)"
+	else
+		puts "#{Char.name} can't confirm new or existing streak"
+	end
+end
 fput "quit"
