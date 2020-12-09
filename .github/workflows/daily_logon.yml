@@ -1,7 +1,7 @@
 name: Run daily logons
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '37 8 * * *'
   push: []
 
 jobs:
