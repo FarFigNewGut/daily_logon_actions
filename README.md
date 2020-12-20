@@ -1,3 +1,5 @@
+![Run daily logons](https://github.com/FarFigNewGut/daily_logon_actions/workflows/Run%20daily%20logons/badge.svg)
+
 # daily_logon_actions
 Runs daily logons for gemstone
 
